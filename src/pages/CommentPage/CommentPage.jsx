@@ -12,15 +12,15 @@ const CommentPage = () => {
   const { context, fetchPosts, posts, fetchComments, comments, setComments } =
     useContext(GlobalContext)
 
-  const [content, setContent] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const [page, setPage] = useState("CommentsPage")
-
   const navigate = useNavigate()
   const params = useParams()
 
+  const [content, setContent] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [page, setPage] = useState("CommentPage")
+
   useEffect(() => {
-    const token = window.localStorage.getItem("labeddit-token")
+    const token = window.localStorage.getItem("labeddit")
     if (token) {
       context.setIsAuth(true)
     } else {
@@ -45,19 +45,23 @@ const CommentPage = () => {
       const body = {
         content: content,
       }
+
       const config = {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       }
+
       const response = await axios.post(
         `${BASE_URL}/posts/comment/${postId}`,
         body,
         config
       )
+
       setComments(response.data)
       fetchComments(params.id)
       setContent("")
+
     } catch (error) {
       console.log(error?.response?.data)
       window.alert(error?.response?.data)

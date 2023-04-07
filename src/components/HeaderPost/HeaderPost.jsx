@@ -10,7 +10,7 @@ const HeaderPost = () => {
   const navigate = useNavigate()
 
   function logout() {
-    window.localStorage.removeItem("labeddit-token")
+    window.localStorage.removeItem("labeddit")
     context.setIsAuth(false)
     goToLoginPage(navigate)
   }

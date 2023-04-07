@@ -38,7 +38,7 @@ const SignupPage = () => {
 
       const response = await axios.post(`${BASE_URL}/users/signup`, body)
 
-      window.localStorage.setItem("labeddit-token", response.data.token)
+      window.localStorage.setItem("labeddit", response.data.token)
 
       context.context.setIsAutgh(true)
 
@@ -54,7 +54,7 @@ const SignupPage = () => {
       <HeaderSignup />
       <Styled>
         <div>
-            <h1>Olá, boas vindas ao LabEddit D</h1>
+            <h1>Olá, boas vindos ao Labeddit</h1>
         </div>
         
         <div className="input">

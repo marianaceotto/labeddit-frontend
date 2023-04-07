@@ -18,12 +18,15 @@ export function Comment({comment}) {
       let body = {
         like: true,
       }
+
       await axios.put(`${BASE_URL}/posts/comment/${commentId}/like`, body, {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       })
+
       fetchComments(params.id)
+
     } catch (error) {
       console.log(error?.response?.data)
       alert(error?.response?.data)
@@ -35,12 +38,15 @@ export function Comment({comment}) {
       let body = {
         like: false,
       }
+
       await axios.put(`${BASE_URL}/posts/comment/${commentId}/like`, body, {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       }),
+
         fetchComments(params.id)
+        
     } catch (error) {
       console.log(error?.response?.data)
       alert(error?.response?.data)
