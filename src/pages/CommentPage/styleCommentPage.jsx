@@ -2,22 +2,24 @@ import styled from "styled-components"
 
 export const Styled = styled.main`
   display: flex;
-  flex-direction: column;
   margin-bottom: 50px;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 
-  input {
+  button {
+    width: 365px;
+    height: 51px;
+    line-height: 25px;
+    margin-top: 15px;
+    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
+    border-radius: 12px;
     border: none;
-    background-color: #e0e0e0;
-    margin-top: 10px;
-    margin-left: 10px;
+    color: #ffff;
+    font-style: normal;
+    font-weight: 700;
     font-size: 18px;
   }
-
-  input:focus {
-    outline: none;
-  } 
 
   hr {
     width: 363.01px;
@@ -32,29 +34,27 @@ export const Styled = styled.main`
     );
   }
   
-  .container-posts {
+  .input {
     display: flex;
-    flex-direction: column;
     margin-top: 30px;
+    flex-direction: column;
   }
-  .posts {
+  
+  .comment {
     width: 364px;
     height: 131px;
-    background: #e0e0e0;
+    margin-top: 12px;
     border-radius: 12px;
+    background: #e0e0e0;   
   }
-
-  .postar {
-    width: 365px;
-    height: 51px;
-    margin-top: 15px;
-    background: linear-gradient(90deg, #ff6489 0%, #f9b24e 100%);
-    border-radius: 12px;
+  input {
+    margin-top: 10px;
+    margin-left: 10px;
     border: none;
-    color: #ffff;
-    font-style: normal;
-    font-weight: 700;
+    background-color: #e0e0e0;
     font-size: 18px;
-    line-height: 25px;
   }
+  input:focus {
+    outline: none;
+  } 
 `

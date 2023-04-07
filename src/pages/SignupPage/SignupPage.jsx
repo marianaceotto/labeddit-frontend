@@ -73,7 +73,6 @@ const SignupPage = () => {
             </p>
                 <button className="button-cadastrar" onClick={signup}>Cadastrar</button>
             </div>
-        <Footer />
       </Styled>
     </>
   )
