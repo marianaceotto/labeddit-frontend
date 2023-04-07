@@ -36,7 +36,7 @@ const LoginPage = () => {
         password: form.password,
       }
 
-      const response = await axios.post(`${BASE_URL}/user/login`, body)
+      const response = await axios.post(`${BASE_URL}/users/login`, body)
 
       window.localStorage.setItem("labeddit-token", response.data.token)
       const token = window.localStorage.getItem("labeddit-token")
