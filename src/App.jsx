@@ -1,5 +1,5 @@
-import { GlobalStyle } from "./GlobalStyle.styled"
-import Router from "./routes/Router"
+import { GlobalStyle } from "./GlobalStyled"
+import Router from "./router/Router"
 import GlobalState from "./contexts/GlobalState"
 import { GlobalContext } from "./contexts/GlobalContext";
 

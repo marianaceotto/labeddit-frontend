@@ -83,12 +83,12 @@ const LoginPage = () => {
           />
         </section>
         <section className="button">
-          <button className="button-continuar" onClick={login}>
+          <button className="continuar" onClick={login}>
             Continuar
           </button>
           <hr />
           <button
-            className="button-cadastrar"
+            className="cadastrar"
             onClick={() => {
               goToSignupPage(navigate)
               setPage("signupPage")

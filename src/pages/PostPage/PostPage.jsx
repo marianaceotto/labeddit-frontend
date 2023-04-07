@@ -54,8 +54,8 @@ const PostPage = () => {
     <>
       <HeaderPost />
       <Styled>
-        <section className="container-post">
-          <div className="post">
+        <section className="container-posts">
+          <div className="posts">
             <input 
               type="text" 
               placeholder="Escreva seu post..." 
@@ -63,7 +63,7 @@ const PostPage = () => {
               onChange={(e) => setContent(e.target.value)}
               />
           </div>
-          <button className="btn-postar" type="submit" onClick={createPost}>Postar</button>
+          <button className="postar" type="submit" onClick={createPost}>Postar</button>
           <hr />
         </section>  
         <section className="container-posts">

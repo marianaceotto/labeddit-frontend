@@ -85,7 +85,7 @@ const CommentPage = () => {
           onClick={() => createComment(params.id)}
           disabled={isLoading}
         >
-          {isLoading ? <div className="loading"></div> : "Responder"}
+          {isLoading ? <div></div> : "Responder"}
         </button>
       </section>
       <hr />
