@@ -9,13 +9,13 @@ import Post from "../../components/Post/Post"
 
 const PostPage = () => {
   const { context, posts, setPosts, fetchPosts } = useContext(GlobalContext)
-  const params = useParams()
-
-  const [ content, setContent ] = useState("")
   const navigate = useNavigate()
+  const params = useParams()
+  const [ content, setContent ] = useState("")
+  
 
   useEffect(() => {
-    const token = window.localStorage.getItem("labeddit-token")
+    const token = window.localStorage.getItem("labeddit")
     if (token) {
       context.setIsAuth(true)
     } else {
@@ -32,18 +32,22 @@ const PostPage = () => {
       const body = {
         content: content,
       }
+
       const config = {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       }
+
       const response = await axios.post(
         `${BASE_URL}/posts/create`,
         body,
         config
       )
+
       setPosts(response.data)
       fetchPosts()
+      
     } catch (error) {
       console.log(error?.response?.data)
       window.alert(error?.response?.data) 

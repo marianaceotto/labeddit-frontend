@@ -6,6 +6,7 @@ import logoSmall from "../../assets/logoSmall.png"
 
 const HeaderSignup = () => {
   const navigate = useNavigate()
+  
   return (
     <>
       <Styled>

@@ -9,7 +9,7 @@ export default function GlobalState() {
   const [page, setPage] = useState("")
 
   useEffect(() => {
-    const token = window.localStorage.getItem("labeddit-token")
+    const token = window.localStorage.getItem("labeddit")
 
     if(token) {
       setIsAuth(true)
@@ -25,7 +25,7 @@ export default function GlobalState() {
     try {
       const config = {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       };
       const response = await axios.get(`${BASE_URL}/posts`, config);
@@ -40,7 +40,7 @@ export default function GlobalState() {
     try {
       const config = {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       };
       const response = await axios.get(

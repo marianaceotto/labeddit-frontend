@@ -23,7 +23,7 @@ export function Post({ post }) {
       }
       await axios.put(`${BASE_URL}/posts/${postId}/like`, body, {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       })
       fetchPosts()
@@ -41,7 +41,7 @@ export function Post({ post }) {
       await axios.put(`${BASE_URL
       }/posts/${postId}/like`, body, {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       }),
       fetchPosts()
@@ -55,7 +55,7 @@ export function Post({ post }) {
     try {
       const config = {
         headers: {
-          Authorization: window.localStorage.getItem("labeddit-token"),
+          Authorization: window.localStorage.getItem("labeddit"),
         },
       }
       const response = await axios.get(

@@ -10,8 +10,14 @@ import logo from "../../assets/logo.png"
 
 const LoginPage = () => {
   const { context, page, setPage } = useContext(GlobalContext)
-
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = window.localStorage.getItem("labeddit")
+    if (token) {
+      goToPostsPage(navigate)
+    }
+  }, [])
 
   const [form, setForm] = useState({
     email: "",
@@ -22,13 +28,6 @@ const LoginPage = () => {
     setForm({ ...form, [event.target.name]: event.target.value })
   }
 
-  useEffect(() => {
-    const token = window.localStorage.getItem("labeddit-token")
-    if (token) {
-      goToPostsPage(navigate)
-    }
-  }, [])
-
   const login = async () => {
     try {
       const body = {
@@ -38,11 +37,11 @@ const LoginPage = () => {
 
       const response = await axios.post(`${BASE_URL}/users/login`, body)
 
-      window.localStorage.setItem("labeddit-token", response.data.token)
-      const token = window.localStorage.getItem("labeddit-token")
+      window.localStorage.setItem("labeddit", response.data.token)
+      const token = window.localStorage.getItem("labeddit")
 
       if (response.data.token === undefined) {
-        window.localStorage.removeItem("labeddit-token")
+        window.localStorage.removeItem("labeddit")
         goToHomePage(navigate)
       }
 
@@ -52,7 +51,7 @@ const LoginPage = () => {
     } catch (error) {
       console.log(error?.response?.data)
       alert(error?.response?.data)
-      window.localStorage.removeItem("labeddit-token")
+      window.localStorage.removeItem("labeddit")
     }
   }
 
